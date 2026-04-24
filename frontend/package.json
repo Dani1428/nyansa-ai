@@ -1,7 +1,8 @@
 {
-  "name": "frontend",
+  "name": "nyansa-frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Daniel Gohi <eliedaniel2013@gmail.com>",
   "type": "module",
   "scripts": {
     "dev": "vite",
