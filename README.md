@@ -89,6 +89,11 @@ To empower inclusive AI models by providing the ground-truth data necessary to u
    npm run dev
    ```
 
+## 👥 Owner & Contact
+- **Owner**: Daniel Gohi
+- **Email**: [eliedaniel2013@gmail.com](mailto:eliedaniel2013@gmail.com)
+- **Contact**: 0769989178
+
 ## 📄 License
 This project is proprietary and confidential.
 
