@@ -189,7 +189,7 @@ const Services = () => {
 
         <section style={{ backgroundColor: 'var(--color-primary-container)', color: '#fff', padding: '6rem 0' }}>
           <div className="container" style={{ textAlign: 'center' }}>
-            <h2 style={{ fontSize: '2.25rem', fontWeight: 900, marginBottom: '2.5rem', tracking: '-0.025em' }}>{t('services.cta.title')}</h2>
+            <h2 style={{ fontSize: '2.25rem', fontWeight: 900, marginBottom: '2.5rem', opacity: '-0.025em' }}>{t('services.cta.title')}</h2>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <Link to="/contact"><button className="btn-primary" style={{ backgroundColor: '#fff', color: 'var(--color-primary)', padding: '1rem 2rem', fontSize: '1.125rem', borderRadius: '0.75rem', border: 'none', cursor: 'pointer' }}>{t('services.cta.btn1')}</button></Link>
               <Link to="/datasets"><button className="btn-outline" style={{ borderColor: 'rgba(255,255,255,0.3)', color: '#fff', padding: '1rem 2rem', fontSize: '1.125rem', borderRadius: '0.75rem', background: 'none', cursor: 'pointer' }}>{t('services.cta.btn2')}</button></Link>

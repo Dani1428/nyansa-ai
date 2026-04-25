@@ -141,7 +141,7 @@ const LanguagesExperts = () => {
                     </div>
                   </div>
                   
-                  <label style={{ position: 'relative', display: 'inline-flex', itemsCenter: 'center', cursor: lang.archived ? 'not-allowed' : 'pointer' }}>
+                  <label style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', cursor: lang.archived ? 'not-allowed' : 'pointer' }}>
                     <input type="checkbox" className="sr-only" checked={lang.active} onChange={() => toggleLanguage(lang.id, lang.active)} disabled={lang.archived} style={{ position: 'absolute', opacity: 0, width: 0, height: 0 }} />
                     <div style={{ width: '2.25rem', height: '1.25rem', backgroundColor: lang.active ? 'var(--color-primary)' : 'var(--color-outline-variant)', borderRadius: '9999px', transition: 'background-color 0.2s', position: 'relative' }}>
                       <div style={{ content: '""', position: 'absolute', top: '2px', left: lang.active ? 'calc(100% - 18px)' : '2px', width: '1rem', height: '1rem', backgroundColor: 'white', borderRadius: '50%', transition: 'all 0.2s' }}></div>
