@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: nyansa_db
+    environment:
+      POSTGRES_USER: nyansa
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_DB: nyansa_ai
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - nyansa
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: nyansa_backend
+    environment:
+      DEBUG: 'True'
+      DATABASE_URL: postgresql://nyansa:12345678@postgres:5432/nyansa_ai
+      ALLOWED_HOSTS: 'localhost,127.0.0.1'
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    volumes:
+      - ./backend:/app
+    networks:
+      - nyansa
+    command: python manage.py runserver 0.0.0.0:8000
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: nyansa_frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend/src:/app/src
+    networks:
+      - nyansa
+    environment:
+      VITE_API_URL: http://localhost:8000
+
+volumes:
+  postgres_data:
+
+networks:
+  nyansa:
